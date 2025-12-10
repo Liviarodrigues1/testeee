@@ -35,3 +35,30 @@ Os requisitos funcionais descrevem as funcionalidades que o veículo deve execut
 
 
 **Observação:** Requisito 20 foi retirado devido à interpretação errônea dos requisitos gerais da matéria. 
+
+
+# Arquitetura de Software
+
+A arquitetura de software do veículo foi projetada de forma **modular e escalável**, garantindo integração eficiente com os subsistemas de Estrutura e Eletrônica. O software é responsável pelo **processamento de dados, tomada de decisão, controle do veículo e interface com sistemas externos**, assegurando operação autônoma e segura.
+
+## Subsistema de visão computacional
+
+Este subsistema interpreta os dados fornecidos pelo subsistema de percepção para gerar ações concretas e autônomas. Inclui:  
+- Reconhecimento de placas de Pare/Siga, curvas, faixa de pedestre e cones.  
+- Identificação de obstáculos dinâmicos e estáticos ao longo do trajeto.  
+- Definição de comandos de movimentação e ajustes de velocidade baseados nas regras de trânsito simuladas.
+
+## Subsistema de Navegação
+
+Responsável por **executar as decisões do software** convertendo-as em comandos para o subsistema de atuação (eletrônica). 
+- Processamentos dos dados recebidos pelos sensores e visão computacional.
+- Controle da velocidade.
+- Controle de direção do veículo.
+
+## Subsistema de Telemetria
+
+Responsável pelo **monitoramento remoto e armazenamento de dados**:  
+- Transmissão de dados de status, energia e eventos para backend remoto via MQTT.  
+- Interface web para acompanhamento em tempo real da telemetria.  
+- Registro e exportação de logs para análise posterior, incluindo eventos críticos, falhas e dados de desempenho.
+
